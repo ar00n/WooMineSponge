@@ -1,6 +1,6 @@
 # WooMineSponge - Self-hosted Minecraft Donations
 
-WooMineSponge is a port of free Minecraft Donation plugin from Bukkit to Sponge's API.  By leveraging a well known eCommerce plugin on the
+WooMineSponge is a port of free WooMinecraft Donation plugin from Bukkit to Sponge's API.  By leveraging a well known eCommerce plugin on the
 WordPress side of things, we allow you to specify commands for product variations, general product commands, and resending of donations at any time.   
 ![WooMinecraft Logo](https://raw.githubusercontent.com/WooMinecraft/WooMinecraft/master/src/main/resources/wmc-logo.jpg)
 
