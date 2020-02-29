@@ -1,0 +1,17 @@
+[
+    {
+        "modid": "woominesponge",
+        "name": "WooMineSponge",
+        "version": "1.2.0-SPONGE",
+        "url": "https://ar0n.com",
+        "authorList": [
+            "ar0n"
+        ],
+        "dependencies": [
+            "spongeapi@7.1.0"
+        ],
+        "requiredMods": [
+            "spongeapi@7.1.0"
+        ]
+    }
+]
