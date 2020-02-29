@@ -1,11 +1,11 @@
-# WooMinecraft - Self-hosted Minecraft Donations
+# WooMineSponge - Self-hosted Minecraft Donations
 
-[WooMinecraft](http://woominecraft.com) is a free Minecraft Donation plugin for your server that provides a self-hosted solution where you're the boss.  By leveraging a well known eCommerce plugin on the
+WooMineSponge is a port of free Minecraft Donation plugin from Bukkit to Sponge's API.  By leveraging a well known eCommerce plugin on the
 WordPress side of things, we allow you to specify commands for product variations, general product commands, and resending of donations at any time.   
 ![WooMinecraft Logo](https://raw.githubusercontent.com/WooMinecraft/WooMinecraft/master/src/main/resources/wmc-logo.jpg)
 
 ## IMPORTANT
-This build supports only **Minecraft Spigot 1.12.2**
+This build supports only **Minecraft Sponge**
 
 If in your config you are using the **/shop** path as your URL, you must NOT use that going forward. Your host MUST support
 access to the WordPress Rest API. If they do not, you should consider changing hosts.
@@ -13,31 +13,22 @@ access to the WordPress Rest API. If they do not, you should consider changing h
 ## Config
 Your config should look like the below section.
 ```
-# Set this to the desired language file you wish to load.
-#
-# If your l10n is not available but one is that you know how to speak,consider
-# contributing to this plugin at https://github.com/WooMinecraft/WooMinecraft/
-lang: "en"
+# You must set this to your WordPress site URL.  If you installed WordPress in a
+# subdirectory, it should point there.
+url = "https://ar0n.com"
+
+# This must match the WordPress key in your admin panel for WooMinecraft
+# This is a key that YOU set, both needing to be identical in the admin panel
+# and in this config file
+# For security purposes, you MUST NOT leave this empty.
+key = ""
 
 # This is how often, in seconds, the server will contact your WordPress installation
 # to see if there are donations that need made.
-update_interval: 1500
-
-# You must set this to your WordPress site URL.  If you installed WordPress in a
-# subdirectory, it should point there.
-url: "http://example.com"
-
-# This must match the WordPress key in your admin panel for WooMinecraft
-# For security purposes, you MUST NOT leave this empty.
-key: ""
-
-# Allowed words the player need to be on to run the commands.
-# Disabled by default!
-# whitelist-worlds:
-#  - world
+interval = 300
 
 # Set to true in order to toggle debug information
-debug: false
+debug = false
 ```
 
 ## How does it work?
@@ -48,13 +39,6 @@ the WordPress server to check for donations for all online players.
 If online players have commands waiting to be processed, then all necessary commands are ran.  There is NO LIMIT to the type of commands you can set, `give`, `i`, `tp`, etc... all commands are ran
 by the console sender, and not a player.
 
-## Contributions
-
-As with all Github projects, we encourage our users to contribute, even if it's just a small as [opening an issue](https://github.com/WooMinecraft/WooMinecraft).  Every little bit helps, especially with pre-releases
-that may be unstable.
-
-Please review the [Contributors Guidelines](https://github.com/WooMinecraft/WooMinecraft/blob/master/CONTRIBUTING.md) for the best way to contribute. If you'd like to see our list of contributors, [check that out on github here](https://github.com/WooMinecraft/WooMinecraft/graphs/contributors).
-
 ## Mojang Guidelines
 Since this plugin is GPL and entirely opensource, we cannot be sure how you will use this. However, when providing 'donation' options, you are still considered a 
 `commercial` entity and therefore are bound to the [Mojang Commercial Usage Guidelines](https://account.mojang.com/terms#commercial)
@@ -63,6 +47,9 @@ Since this plugin is GPL and entirely opensource, we cannot be sure how you will
 You'll need the WordPress plugin for this MC Plugin to work - you can [get it here](https://github.com/WooMinecraft/woominecraft-wp).
 
 ## Changelog
+
+## 1.2.0-SPONGE
+* Ported over to Sponge API. World whitelisting + language change is disabled.
 
 ## 1.2.0
 * Tested on Spigot 1.12.2
